@@ -1,5 +1,8 @@
 # Project Lightbeam
 
+## Clone this project
+`git clone https://github.com/alcance/lightbeam.git`
+
 ## Install dependencies
 
 `npm install`
