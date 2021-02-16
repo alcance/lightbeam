@@ -1,31 +1,29 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
+import axios from 'axios';
+
 import './App.css';
-class App extends Component {
 
-  state = {
-    location: 'Crazy Rd. 123',
+import Formulario from './components/Formulario';
+
+const URL = 'https://systec-puzzle.herokuapp.com/lightbeam'
+
+function App() {
+  const [location, setLocation] = useState('Portoviejo')
+
+  const handleSubmit = async e => {
+    e.preventDefault();
+    const response = await axios.post(URL, location)
+    console.log(response);
   };
 
-  handleSubmit = async e => {
-  };
-
-  render() {
-    return (
-      <div className="App">
-        <p>{this.state.response}</p>
-        <form onSubmit={this.handleSubmit}>
-          <p>
-            <strong>Post to Server:</strong>
-          </p>
-          <input
-            type="text"
-            value={this.state.location}
-            onChange={e => this.setState({ location: e.target.value })}
-          />
-          <button type="submit">Submit</button>
-        </form>
-      </div>
-    );
+  const handleChange = (event) => {
+    setLocation(event.target.value)
   }
+
+  return (
+    <div className="App">
+      <Formulario value={location} onChange={handleChange} onSubmit={handleSubmit} />
+    </div>
+  );
 }
 export default App;
