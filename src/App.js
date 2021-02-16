@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import './App.css';
 
+import InputLocation from './components/input';
+import Button from './components/button';
 
 export default function App() {
 
-  const [location, setLocation] = useState('')
+  const [location, setLocation] = useState('Crazy Rd. 123')
   // const [response, setResponse] = useState({})
   const handleSubmit = async e => {
     e.preventDefault()
@@ -31,12 +33,14 @@ export default function App() {
           <p>
             <strong>Post to Server:</strong>
           </p>
-          <input
+          <InputLocation location={location} handleChange={handleChange}/>
+          {/* <input
             type="text"
             value={location}
             onChange={handleChange}
-          />
-          <button type="submit">Submit</button>
+          /> */}
+          <Button/>
+          {/* <button type="submit">Submit</button> */}
         </form>
       </div>
     );
