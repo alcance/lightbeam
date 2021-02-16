@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
+import rocket from './rocket_gsg.svg'
 
 import InputLocation from './components/input';
 import Button from './components/button';
@@ -28,10 +29,11 @@ export default function App() {
 
     return (
       <div className="App">
+        <img src={rocket} className='space-rocket'/>
         {/* <p>{response}</p> */}
-        <form onSubmit={handleSubmit}>
-          <p>
-            <strong>Post to Server:</strong>
+        <form className='space-form' onSubmit={handleSubmit}>
+          <p className="space-header">
+            <strong>Start communications:</strong>
           </p>
           <InputLocation location={location} handleChange={handleChange}/>
           {/* <input
