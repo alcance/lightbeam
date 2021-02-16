@@ -1,31 +1,36 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import './App.css';
-class App extends Component {
+import Button from './components/Button';
+import Input from './components/Input';
 
-  state = {
-    location: 'Crazy Rd. 123',
-  };
+const App = () => {
+  const [location, setLocation] = useState('Crazy Rd. 123');
+  const [response, setResponse] = useState('');
 
-  handleSubmit = async e => {
-  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  }
 
-  render() {
-    return (
-      <div className="App">
-        <p>{this.state.response}</p>
-        <form onSubmit={this.handleSubmit}>
+  return (
+    <div className="App">
+        <p>{response}</p>
+        {/*<form method='POST' action='https://systec-puzzle.herokuapp.com/lightbeam' onSubmit={(e) => handleSubmit(e)}>*/}
+        <form onSubmit={(e) => handleSubmit(e)}>
           <p>
             <strong>Post to Server:</strong>
           </p>
           <input
+            name='location'
             type="text"
-            value={this.state.location}
-            onChange={e => this.setState({ location: e.target.value })}
+            value={location}
+            onChange={e => setLocation(e.target.value)}
           />
+          <Input />
+          <Button />
           <button type="submit">Submit</button>
         </form>
-      </div>
-    );
-  }
+    </div>
+  );
 }
+
 export default App;
