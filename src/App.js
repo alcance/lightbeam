@@ -1,31 +1,27 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import './App.css';
-class App extends Component {
 
-  state = {
-    location: 'Crazy Rd. 123',
+const App = () => {
+  const [location, setLocation] = useState('Crazy Rd. 123');
+  const response = '';
+  const handleSubmit = async (e) => {
   };
 
-  handleSubmit = async e => {
-  };
-
-  render() {
     return (
       <div className="App">
-        <p>{this.state.response}</p>
-        <form onSubmit={this.handleSubmit}>
+        <p>{ response ? response : 'Aun no hay nada. '}</p>
+        <form onSubmit={handleSubmit}>
           <p>
             <strong>Post to Server:</strong>
           </p>
           <input
             type="text"
-            value={this.state.location}
-            onChange={e => this.setState({ location: e.target.value })}
+            value={location}
+            onChange={e => setLocation({ location: e.target.value })}
           />
           <button type="submit">Submit</button>
         </form>
       </div>
     );
-  }
 }
 export default App;
