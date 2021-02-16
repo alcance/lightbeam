@@ -32,7 +32,9 @@ const App = () => {
           />
           <button className="my-2 border rounded border-white py-1 px-3 hover:bg-white hover:text-green-400" type="submit">Enviar</button>
         </form>
+        <iframe src="https://giphy.com/embed/26hisVHpbBwfcfKus" width="371" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/alien-intergalactic-spaced-out-26hisVHpbBwfcfKus">via GIPHY</a></p>
       </div>
+
     </div>
   );
 };
