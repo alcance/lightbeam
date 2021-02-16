@@ -8,10 +8,10 @@ import Button from './components/button';
 export default function App() {
 
   const [location, setLocation] = useState('Crazy Rd. 123')
-  // const [response, setResponse] = useState({})
+  const [response, setResponse] = useState('')
   const handleSubmit = async e => {
     e.preventDefault()
-
+    setResponse('');
     console.log(location)
     let res = await fetch('http://systec-puzzle.herokuapp.com/lightbeam', {
       method: 'POST',
@@ -20,29 +20,29 @@ export default function App() {
       },
       body: JSON.stringify({location})
     })
-    .catch(err=>console.warn(err))
-    console.log(res)
-    // if(res.ok) setResponse(res)
+    .catch(err=>console.warn(err));
+    if (res) {
+      const result = await res.json();
+      setResponse(result);
+    } else {
+      setResponse(`Couldn't reach astronauts`)
+    }
   };
 
   const handleChange = (e) => setLocation(e.target.value)
 
     return (
       <div className="App">
-        <img src={rocket} className='space-rocket'/>
-        {/* <p>{response}</p> */}
+        <img alt="rocket" src={rocket} className='space-rocket'/>
+        {response && <p className="space-message space-text">{response}</p>}
         <form className='space-form' onSubmit={handleSubmit}>
           <p className="space-header">
             <strong>Start communications:</strong>
           </p>
-          <InputLocation location={location} handleChange={handleChange}/>
-          {/* <input
-            type="text"
-            value={location}
-            onChange={handleChange}
-          /> */}
-          <Button/>
-          {/* <button type="submit">Submit</button> */}
+          <div className="space-holder">
+            <InputLocation location={location} handleChange={handleChange}/>
+            <Button/>
+          </div>
         </form>
       </div>
     );

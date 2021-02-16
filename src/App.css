@@ -59,6 +59,7 @@ body, html {
   border: 1px solid #ced4da;
   border-radius: .25rem;
   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  margin-right: 10px;
 }
 
 .space-button {
@@ -67,7 +68,7 @@ body, html {
   justify-content: center;
   align-items: center;
   background:  #2a2c37;
-  border-radius: 100px;
+  border-radius: 10px;
   border:  #2a2c37;
   color:white;
   box-shadow: none;
@@ -90,15 +91,13 @@ body, html {
   color:white;
 }
 
-.fs-progress {
-  width: 100%;
-  background-color: #EDEEF0;
-  border-radius: 78px;
+.space-message {
+  font-size: 30px;
+  color: white;
 }
 
-.fs-progress__bar {
-  width: 1%;
-  height: 7px;
-  background-color: #9197CC;
-  border-radius: 78px;
+.space-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
