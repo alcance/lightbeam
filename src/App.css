@@ -1,5 +1,14 @@
+body, html {
+  font-family: 'Montserrat', sans-serif;
+  background: #4852AA;
+}
 .App {
   text-align: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .App-logo {
@@ -35,4 +44,59 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.space-input {
+  display: block;
+  width: 100%;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  margin-right: 10px;
+}
+
+.space-button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:  #2a2c37;
+  border-radius: 10px;
+  border:  #2a2c37;
+  color:white;
+  box-shadow: none;
+  font-size: 16px;
+  padding: 5px;
+  min-width: 100px;
+  transition: 0.2s ease-in;
+  line-height: 24px;
+}
+.space-rocket {
+  max-width: 350px;
+  min-width: 150px;
+  width: 60%;
+  position: absolute;
+  bottom: -10px;
+  left: -30px;
+}
+.space-header {
+  font-size: 24px;
+  color:white;
+}
+
+.space-message {
+  font-size: 30px;
+  color: white;
+}
+
+.space-holder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
