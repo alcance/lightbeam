@@ -1,0 +1,23 @@
+.button {
+    background-color: cornflowerblue;
+    border-color: cornflowerblue;
+    color: white;
+    /* padding: 50; */
+    width: 100px;
+    height: 50px;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+.button:hover{
+    background-color: black;
+    border-color: white;
+    color: white;
+    transition: all 0.2s ease-in-out;
+}
+.button:disabled{
+    background-color: gray;
+    cursor: not-allowed;
+}
