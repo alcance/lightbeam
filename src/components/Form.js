@@ -13,7 +13,7 @@ export const Form = ({setResponse}) => {
         e.preventDefault();
 
         if (location.trim().length > 0) {
-            const resp = await fetchData(state);
+            const resp = await fetchData({location: location.trim()});
             setResponse(resp);
             setState({
                 location: ''
